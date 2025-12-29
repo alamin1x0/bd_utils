@@ -24,13 +24,34 @@ class BdDate {
     "শনিবার",
   ];
 
+  static const Map<String, String> _bnNumbers = {
+    '0': '০',
+    '1': '১',
+    '2': '২',
+    '3': '৩',
+    '4': '৪',
+    '5': '৫',
+    '6': '৬',
+    '7': '৭',
+    '8': '৮',
+    '9': '৯',
+  };
+
+  static String _toBanglaNumber(int number) {
+    return number.toString().split('').map((e) => _bnNumbers[e] ?? e).join();
+  }
+
   static String today() {
     final now = DateTime.now();
-    return "${now.day} ${_months[now.month - 1]} ${now.year}";
+    String dayBangla = _toBanglaNumber(now.day);
+    String yearBangla = _toBanglaNumber(now.year);
+    return "$dayBangla ${_months[now.month - 1]} $yearBangla";
   }
 
   static String todayWithDay() {
     final now = DateTime.now();
-    return "${_days[now.weekday % 7]}, ${today()}";
+    String dayBangla = _toBanglaNumber(now.day);
+    String yearBangla = _toBanglaNumber(now.year);
+    return "${_days[now.weekday % 7]}, $dayBangla ${_months[now.month - 1]} $yearBangla";
   }
 }
