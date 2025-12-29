@@ -1,0 +1,21 @@
+name: bd_utils
+description: Bangladesh utility helpers for Flutter apps (phone, date, currency, district, bangla number)
+version: 1.0.0
+homepage: https://github.com/your-github-username/bd_utils
+repository: https://github.com/your-github-username/bd_utils
+issue_tracker: https://github.com/your-github-username/bd_utils/issues
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
